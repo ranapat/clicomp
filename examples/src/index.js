@@ -1,6 +1,6 @@
-import { escapes } from '../../lib';
+import { escapes, icons } from '../../lib';
 import { Renderer } from '../../lib';
-import { Pane, Progress } from '../../lib';
+import { Pane, Progress, Label } from '../../lib';
 
 const renderer = new Renderer();
 
@@ -31,7 +31,30 @@ const progress = new Progress(25, 2, 60, 0, '', {});
 progress.renderer = renderer;
 progress.show();
 
+const label = new Label(25, 4, '^123$'.repeat(100), icons.dots2, {
+  maxWidth: 20,
+  _interval: 1000,
+  _labelBackgroundColor: escapes.colors.Background.Red,
+  _labelForegroundColor: escapes.colors.Foreground.Green,
+  _iconBackgroundColor: escapes.colors.Background.Green,
+  _iconForegroundColor: escapes.colors.Foreground.Red
+});
+label.renderer = renderer;
+label.show();
+//label.hide();
+
+//label.label = undefined;
+//label.icon = icons.sun;
+
+/*
+label.options = {
+  maxWidth: 6
+};
+*/
+
 renderer.cursorTo(0, 0);
+
+//label.label = 'new';
 
 /*
 pane.options = {
@@ -58,8 +81,9 @@ let indexY = 1;
 let indexS = 0.1;
 let index = 0;
 setInterval(() => {
-  progress.percentages += .001;
-  progress.label = ((100 * progress.percentages).toFixed(1)) + ' %';
+  //label.label = Math.random();
+  //progress.percentages += .001;
+  //progress.label = ((100 * progress.percentages).toFixed(1)) + ' %';
   //progress.width += index;
   //pane.label += index++;
   //pane.x += indexX;
@@ -91,26 +115,3 @@ setInterval(() => {
   //pane.renderer = undefined;
   //console.log('now where?');
 }, 80);
-
-const frames1 = [
-  "⠋",
-  "⠙",
-  "⠹",
-  "⠸",
-  "⠼",
-  "⠴",
-  "⠦",
-  "⠧",
-  "⠇",
-  "⠏"
-];
-const frames = [
-  "🌑 ",
-  "🌒 ",
-  "🌓 ",
-  "🌔 ",
-  "🌕 ",
-  "🌖 ",
-  "🌗 ",
-  "🌘 "
-];

@@ -1,9 +1,11 @@
 import Renderer from './renderer';
 import Pane from './components/pane';
 import Progress from './components/progress';
+import Label from './components/label';
 
 import * as escapes from './escapes';
+import * as icons from './icons';
 
-export { escapes };
+export { escapes, icons };
 export { Renderer };
-export { Pane, Progress };
+export { Pane, Progress, Label };
