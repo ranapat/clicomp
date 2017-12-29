@@ -8,7 +8,15 @@ const CONSOLE = 'console';
 const STDOUT = 'stdout';
 const STDERR = 'stderr';
 
+let instance = undefined;
+
 class Renderer {
+  static get instance() {
+    instance = instance !== undefined ? instance : new Renderer();
+
+    return instance;
+  }
+
   constructor(method) {
     this.out = undefined;
     if (method === CONSOLE) {
@@ -51,7 +59,7 @@ class Renderer {
         }
       }
 
-      throw new Error('here')
+      throw new Error('undefined property ', property);
     }
   }
 

@@ -2,7 +2,7 @@ import { escapes, icons } from '../../lib';
 import { Renderer } from '../../lib';
 import { Pane, Progress, Label } from '../../lib';
 
-const renderer = new Renderer();
+const renderer = Renderer.instance;
 
 process.stdout.on('resize', function() {
   console.log('screen size has changed!');
@@ -24,11 +24,11 @@ const pane = new Pane(25, 8, 60, 10, '', 0, {
   _verticalLine: '║',
   _scroll: '#'
 });
-pane.renderer = renderer;
+//pane.renderer = renderer;
 pane.show();
 
 const progress = new Progress(25, 2, 60, 0, '', {});
-progress.renderer = renderer;
+//progress.renderer = renderer;
 progress.show();
 
 const label = new Label(25, 4, '^123$'.repeat(100), icons.dots2, {
@@ -39,7 +39,7 @@ const label = new Label(25, 4, '^123$'.repeat(100), icons.dots2, {
   _iconBackgroundColor: escapes.colors.Background.Green,
   _iconForegroundColor: escapes.colors.Foreground.Red
 });
-label.renderer = renderer;
+//label.renderer = renderer;
 label.show();
 //label.hide();
 

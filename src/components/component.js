@@ -1,3 +1,5 @@
+import Renderer from '../renderer';
+
 class Component {
   constructor() {
     this._renderer = undefined;
@@ -10,6 +12,10 @@ class Component {
   }
 
   show() {
+    if (this._renderer === undefined) {
+      this._renderer = Renderer.instance;
+    }
+
     if (true !== this._shown) {
       this._show();
 
