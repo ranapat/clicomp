@@ -27,11 +27,11 @@ const pane = new Pane(25, 8, 60, 10, '', 0, {
 //pane.renderer = renderer;
 pane.show();
 
-const progress = new Progress(25, 2, 60, 0, '', {});
+const progress = new Progress(25, 2, 60, 0.5, '', {});
 //progress.renderer = renderer;
 progress.show();
 
-const label = new Label(25, 4, '^123$'.repeat(100), icons.dots2, {
+const label = new Label(25, 4, '^123$'.repeat(100), icons.sun, {
   maxWidth: 20,
   _interval: 1000,
   _labelBackgroundColor: escapes.colors.Background.Red,

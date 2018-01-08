@@ -5,7 +5,7 @@ const OPTIONS = {
   minWidth: 2,
 
   leftBorder: '╟',
-  processedLine: '═',
+  processedLine: '#',
   unprocessedLine: '─',
   rightBorder: '╢',
 
