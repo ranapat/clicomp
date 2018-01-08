@@ -15,7 +15,7 @@ renderer.clearScreen();
 //renderer.cursorHide();
 //console.log(render.methods);
 
-const pane = new Pane(25, 8, 60, 10, '', 0, {
+const pane = new Pane(25, 6, 60, 10, '', 0, {
   _horizontalLine: '═',
   _topLeftEdge: '╔',
   _topRightEdge: '╗',
@@ -31,8 +31,8 @@ const progress = new Progress(25, 2, 60, 0.5, '', {});
 //progress.renderer = renderer;
 progress.show();
 
-const label = new Label(25, 4, '^123$'.repeat(100), icons.sun, {
-  maxWidth: 20,
+const label = new Label(25, 4, '^123$'.repeat(100), icons.bar1, {
+  maxWidth: 60,
   _interval: 1000,
   _labelBackgroundColor: escapes.colors.Background.Red,
   _labelForegroundColor: escapes.colors.Foreground.Green,
