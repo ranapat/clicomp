@@ -1,6 +1,6 @@
 import { escapes, icons } from '../../lib';
 import { Renderer } from '../../lib';
-import { Pane, Progress, Label } from '../../lib';
+import { Pane, Progress, Label, Paragraph } from '../../lib';
 
 const renderer = Renderer.instance;
 
@@ -15,7 +15,7 @@ renderer.clearScreen();
 //renderer.cursorHide();
 //console.log(render.methods);
 
-const pane = new Pane(25, 6, 60, 10, '', 0, {
+const pane = new Pane(25, 6, 60, 11, '', 0, {
   _horizontalLine: '═',
   _topLeftEdge: '╔',
   _topRightEdge: '╗',
@@ -51,6 +51,29 @@ label.options = {
   maxWidth: 6
 };
 */
+
+const paragraph = new Paragraph(25, 20, '1)example1\n2)example2<br/>3)example3<br>4)example4' + `
+5)this
+6)a1234567890 b0987654321 c1234567890 d0987654321 e1234567890 f0987654321 g1234567890
+7)asd Baskldfjas;dklfjaskl;dfjas;dlkfja;dfa;sdlkfjasd;lfkjasdl;kfjasdl;kfjas;dlkfjas;lkdfjasl;kdfjalskdjfE
+8)is the
+9)1
+10)2
+11)3
+12)multiline
+13)example
+14)which is very very
+15)long
+`, {
+  maxWidth: 60,
+  maxHeight: 10,
+  _offset: .5,
+  _wordWrap: 3,
+  _backgroundColor: escapes.colors.Background.Red,
+  _foregroundColor: escapes.colors.Foreground.Green
+});
+paragraph.show();
+//paragraph.hide();
 
 renderer.cursorTo(0, 0);
 
