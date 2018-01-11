@@ -17,17 +17,17 @@ const OPTIONS = {
 };
 
 class Paragraph extends Component {
-  constructor(x, y, label, options, ...args) {
+  constructor(x, y, text, options, ...args) {
     super(...args);
 
     this._x = undefined;
     this._y = undefined;
-    this._label = undefined;
+    this._text = undefined;
     this._options = options || OPTIONS;
 
     this._validateX = x;
     this._validateY = y;
-    this._validateLabel = label;
+    this._validateText = text;
 
     this._queue = [];
   }
@@ -48,12 +48,12 @@ class Paragraph extends Component {
     return this._y;
   }
 
-  set label(value) {
-    this._setGenerateCompleteProperty('label', value);
+  set text(value) {
+    this._setGenerateCompleteProperty('text', value);
   }
 
-  get label() {
-    return this._label;
+  get text() {
+    return this._text;
   }
 
   set options(value) {
@@ -102,8 +102,8 @@ class Paragraph extends Component {
     }
   }
 
-  set _validateLabel(value) {
-    this._label = `${value ? typeof value === 'string' ? value.trim() : value : ''}`;
+  set _validateText(value) {
+    this._text = `${value ? typeof value === 'string' ? value : value : ''}`;
   }
 
   set _validateOptions(value) {
@@ -128,7 +128,7 @@ class Paragraph extends Component {
     this._generateComplete(true);
   }
 
-  _normalizedLabel() {
+  _normalizedText() {
     const offset = this._options.offset || OPTIONS.offset || 0;
     const wordWrap = this._options.wordWrap || OPTIONS.wordWrap || WORD_WRAP_CUT;
 
@@ -139,14 +139,14 @@ class Paragraph extends Component {
     const height = maxHeight ? maxHeight : this.maxY - this._y;
 
     let result = [];
-    const split = this._label.split(/\n|<br\/>|<br>/gi);
+    const split = this._text.split(/\n|<br\/>|<br>/gi);
     split.forEach(item => {
       if (wordWrap === WORD_WRAP_BREAK) {
-        result.push(item.substring(0, width));
-        const rest = item.substring(width);
-        if (rest) {
-          result.push(rest);
-        }
+        let ssitem = item;
+        do {
+          result.push(ssitem.substring(0, width));
+          ssitem = ssitem.substring(width);
+        } while (ssitem.length > 0);
       } else if (wordWrap === WORD_WRAP_KEEP) {
         const parts = item.split(' ');
         let tmp = '';
@@ -197,7 +197,7 @@ class Paragraph extends Component {
         this._queue.push(' '.repeat(maxWidth));
       }
     } else {
-      let label = this._normalizedLabel();
+      let text = this._normalizedText();
 
       this._queue.push(escapes.colors.Reset);
       if (backgroundColor) {
@@ -206,10 +206,10 @@ class Paragraph extends Component {
       if (foregroundColor) {
         this._queue.push(foregroundColor);
       }
-      for (let i = 0; i < label.length; ++i) {
+      for (let i = 0; i < text.length; ++i) {
         this._queue.push(escapes.cursor.cursorTo(this._x, this._y + i));
 
-        this._queue.push(label[i]);
+        this._queue.push(text[i]);
       }
       this._queue.push(escapes.colors.Reset);
     }
@@ -218,3 +218,4 @@ class Paragraph extends Component {
 }
 
 export default Paragraph;
+export { WORD_WRAP_CUT, WORD_WRAP_KEEP, WORD_WRAP_BREAK };

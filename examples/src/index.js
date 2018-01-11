@@ -1,6 +1,7 @@
 import { escapes, icons } from '../../lib';
 import { Renderer } from '../../lib';
 import { Pane, Progress, Label, Paragraph } from '../../lib';
+import { pwwCut, pwwBreak, pwwKeep } from '../../lib';
 
 const renderer = Renderer.instance;
 
@@ -75,6 +76,17 @@ const paragraph = new Paragraph(25, 20, '1)example1\n2)example2<br/>3)example3<b
 paragraph.show();
 //paragraph.hide();
 
+const paragraph2 = new Paragraph(25, 31, undefined, {
+  maxWidth: 60,
+  maxHeight: 10,
+  offset: 1,
+  wordWrap: pwwBreak,
+  _backgroundColor: escapes.colors.Background.Red,
+  _foregroundColor: escapes.colors.Foreground.Green
+});
+paragraph2.show();
+//paragraph2.hide();
+
 renderer.cursorTo(0, 0);
 
 //label.label = 'new';
@@ -138,3 +150,8 @@ setInterval(() => {
   //pane.renderer = undefined;
   //console.log('now where?');
 }, 80);
+
+let counter = 0;
+setInterval(() => {
+  paragraph2.text += `${counter++}.`;
+}, 1000);
