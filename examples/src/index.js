@@ -79,6 +79,7 @@ paragraph.show();
 const paragraph2 = new Paragraph(25, 31, undefined, {
   maxWidth: 60,
   maxHeight: 10,
+  _maxLength: 100,
   offset: 1,
   wordWrap: pwwBreak,
   _backgroundColor: escapes.colors.Background.Red,

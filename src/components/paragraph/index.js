@@ -8,6 +8,7 @@ const WORD_WRAP_KEEP = 3;
 const OPTIONS = {
   maxWidth: undefined,
   maxHeight: undefined,
+  maxLength: undefined,
 
   offset: undefined,
   wordWrap: undefined,
@@ -103,7 +104,16 @@ class Paragraph extends Component {
   }
 
   set _validateText(value) {
-    this._text = `${value ? typeof value === 'string' ? value : value : ''}`;
+    if (value) {
+    const maxLength = this._options.maxLength || OPTIONS.maxLength;
+      if (maxLength) {
+        this._text = `${value.slice(-maxLength)}`;
+      } else {
+        this._text = `${value}`;
+      }
+    } else {
+      this._text = '';
+    }
   }
 
   set _validateOptions(value) {
