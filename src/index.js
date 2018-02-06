@@ -15,3 +15,6 @@ export { escapes, icons };
 export { Renderer };
 export { Pane, Progress, Label, Paragraph };
 export { pwwCut, pwwKeep, pwwBreak };
+
+const renderer = Renderer.instance;
+export { renderer };

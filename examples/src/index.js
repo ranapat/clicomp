@@ -1,14 +1,12 @@
 import { keyInSelect } from 'readline-sync';
 
-import { Renderer } from '../../lib';
+import { renderer } from '../../lib';
 
 import absolute from './absolute';
 
 const options = [
   'absolute positioning'
 ];
-
-const renderer = Renderer.instance;
 
 do {
   renderer.clearScreen();
