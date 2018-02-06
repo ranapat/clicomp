@@ -3,11 +3,11 @@
 ### Important
 
 - [ ] Tests
-- [ ] Standalone
 - [ ] Documentation
 - [ ] Examples
+- [ ] Append mode
+- [ ] Pane + Paragraph
 
 ### General:
 
 ### Others:
-
