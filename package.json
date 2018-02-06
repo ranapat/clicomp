@@ -19,6 +19,7 @@
     "documentation": "^5.3.5",
     "istanbul": "^0.4.5",
     "mocha": "^5.0.0",
+    "readline-sync": "^1.4.7",
     "uglifyjs2": "0.0.1"
   },
   "scripts": {
