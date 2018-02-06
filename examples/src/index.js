@@ -5,7 +5,7 @@ import { Renderer } from '../../lib';
 import absolute from './absolute';
 
 const options = [
-  'absolute examples'
+  'absolute positioning'
 ];
 
 const renderer = Renderer.instance;
