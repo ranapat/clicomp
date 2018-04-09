@@ -1,6 +1,6 @@
 {
   "name": "clicomp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple cli components library",
   "keywords": "cli components library pane progress colors cursor navigation",
   "main": "lib/index.js",

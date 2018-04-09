@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.0.3] - 2018-04-09
+small changes
+### Changes
+- put maxX and maxY in renderer
+- expose Renderer.instance as renderer
+- update labels
+- split examples into sections
+- add readline-sync
+- update todo
+
 ## [1.0.2] - 2018-01-20
 update package versions and integrate external systems
 ### Changes
