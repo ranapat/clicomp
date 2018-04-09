@@ -63,6 +63,14 @@ class Renderer {
     }
   }
 
+  maxX() {
+    return this.out.maxX;
+  }
+
+  maxY() {
+    return this.out.maxY;
+  }
+
   write(message) {
     this.out.write(message);
   }

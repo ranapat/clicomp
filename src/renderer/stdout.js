@@ -2,10 +2,15 @@ import Default from './default';
 
 class StdOut extends Default {
   write(message) {
-    //process.stdout.write(message);
+    process.stdout.write(message);
+  }
 
+  get maxX() {
+    return process.stdout.columns;
+  }
 
-    process.stdout.write(/*colors.Reverse + colors.Bright + colors.bg.Black + colors.fg.Red + */message/* + colors.Reset*/);
+  get maxY() {
+    return process.stdout.rows
   }
 }
 

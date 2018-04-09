@@ -1,4 +1,4 @@
-import { keyInSelect } from 'readline-sync';
+//import { keyInSelect } from 'readline-sync';
 
 import { renderer } from '../../lib';
 
@@ -11,7 +11,8 @@ const options = [
 do {
   renderer.clearScreen();
 
-  const index = keyInSelect(options, 'Pick one?');
+  //const index = keyInSelect(options, 'Pick one?');
+  const index = 0;
 
   if (index === 0) {
     absolute();
