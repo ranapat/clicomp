@@ -2,7 +2,15 @@
   "name": "clicomp",
   "version": "1.0.3",
   "description": "Simple cli components library",
-  "keywords": "cli components library pane progress colors cursor navigation",
+  "keywords": [
+    "cli components",
+    "cli library",
+    "cli pane",
+    "cli progress",
+    "cli colors",
+    "cli cursor",
+    "cli navigation"
+  ],
   "main": "lib/index.js",
   "dependencies": {},
   "devDependencies": {
