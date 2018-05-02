@@ -1,6 +1,17 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.0.4] - 2018-05-02
+Munor updates
+### Changes
+- update package.json
+- add documentation structure
+- add empty tests
+- append in paragraph
+- update todo
+- update keywords
+- put maxX and maxY in renderer
+
 ## [1.0.3] - 2018-04-09
 small changes
 ### Changes
