@@ -225,6 +225,10 @@ class Paragraph extends Component {
     }
   }
 
+  append(message) {
+    this.text += message + '\n';
+  }
+
 }
 
 export default Paragraph;
