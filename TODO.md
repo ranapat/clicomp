@@ -7,6 +7,7 @@
 - [ ] Examples
 - [ ] Append mode
 - [ ] Pane + Paragraph
+- [ ] Max text length with truncate
 
 ### General:
 
